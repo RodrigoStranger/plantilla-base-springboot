@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: plantilla # Cambiar el nombre de la aplicación dependiendo del proyecto
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres # Cambiar dependiendo de la configuración local
+    username: postgres # Cambiar dependiendo de la configuración local
+    password: rodrigo73714089ubnt # Cambiar dependiendo de la configuración local
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Cambiar a 'update' o 'validate' en producción
+    show-sql: true
