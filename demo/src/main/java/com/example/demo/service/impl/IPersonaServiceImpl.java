@@ -41,6 +41,7 @@ public class IPersonaServiceImpl implements IPersonaService {
         }
         existente.setNombre(persona.getNombre());
         existente.setApellido(persona.getApellido());
+        existente.setEdad(persona.getEdad());
         return personaRepository.save(existente);
     }
 
