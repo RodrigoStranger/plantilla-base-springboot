@@ -31,11 +31,38 @@ Para ejecutar este proyecto necesitarás:
 2. **PostgreSQL** (motor de base de datos instalado en tu sistema)  
    - Descarga: [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
 
+3. **Postman** (para probar los endpoints)  
+   - Descarga: [https://www.postman.com/downloads/](https://www.postman.com/downloads/)  
+   - Importa la colección JSON incluida en este proyecto para realizar pruebas fácilmente (ver sección [Uso del Archivo Postman](https://github.com/RodrigoStranger/plantilla-base-springboot/tree/main/pruebas%20endpoints)).
+
 ---
 
 ## 🛠 Configuración del Proyecto
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/proyecto-demo-springboot.git
-   cd proyecto-demo-springboot
+   git clone https://github.com/RodrigoStranger/plantilla-base-springboot.git
+   ```
+2. **Configurar credenciales en application.yaml (ubicado en src/main/resources/):**
+
+Edita el archivo application.yaml y coloca tus credenciales:
+```java
+   spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo_persona
+    username: TU_USUARIO
+    password: TU_CONTRASEÑA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+```
+
+## 📦 Uso del Archivo Postman (Colección de Pruebas)
+
+Este proyecto incluye un archivo **Postman Collection** exportado en formato `.json` para que puedas probar fácilmente los endpoints de la API.
+
+### **1. Importar la colección en Postman**
+1. Abre **Postman** en tu computadora.
+2. Haz clic en el botón **Import** (parte superior izquierda).
+3. Selecciona **Upload Files** y busca el archivo: Plantilla SpringBoot.postman_collection.json
