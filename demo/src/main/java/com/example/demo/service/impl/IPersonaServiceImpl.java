@@ -28,14 +28,22 @@ public class IPersonaServiceImpl implements IPersonaService {
     }
 
     @Override
-    public Persona actualizarPersona(Persona persona) {
+    public Persona actualizarPersona(Long id, Persona persona) {
+        Persona existente = personaRepository.findById(id).orElse(null);
+        if (existente == null) {
+            return null; // O lanzar una excepción de no encontrado
+        }
         Persona existentePorNombre = personaRepository.findByNombre(persona.getNombre());
         Persona existentePorApellido = personaRepository.findByApellido(persona.getApellido());
         if (existentePorNombre != null && existentePorApellido != null &&
-            (!existentePorNombre.getId().equals(persona.getId()) || !existentePorApellido.getId().equals(persona.getId()))) {
+            (!existentePorNombre.getId().equals(id) || !existentePorApellido.getId().equals(id))) {
             throw new PersonaDuplicadaException("Ya existe otra persona con ese nombre y apellido.");
         }
-        return personaRepository.save(persona);
+        // Actualizar los campos necesarios
+        existente.setNombre(persona.getNombre());
+        existente.setApellido(persona.getApellido());
+        // ...actualiza otros campos si existen...
+        return personaRepository.save(existente);
     }
 
 

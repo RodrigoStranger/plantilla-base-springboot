@@ -7,7 +7,7 @@ import java.util.*;
 public interface IPersonaService {
     Persona crearPersona(Persona persona);
 
-    Persona actualizarPersona(Persona persona);
+    Persona actualizarPersona(Long id, Persona persona);
 
     void eliminarPersonaPorId(Long id);
 

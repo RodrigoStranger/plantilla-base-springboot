@@ -10,7 +10,7 @@ import lombok.*;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_medico")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "nombre")
