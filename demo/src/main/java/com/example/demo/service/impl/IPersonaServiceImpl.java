@@ -44,7 +44,6 @@ public class IPersonaServiceImpl implements IPersonaService {
         return personaRepository.save(existente);
     }
 
-
     @Override
     public void eliminarPersonaPorId(Long id) {
         personaRepository.deleteById(id);
