@@ -31,7 +31,7 @@ public class IPersonaServiceImpl implements IPersonaService {
     public Persona actualizarPersona(Long id, Persona persona) {
         Persona existente = personaRepository.findById(id).orElse(null);
         if (existente == null) {
-            return null; // O lanzar una excepción de no encontrado
+            return null;
         }
         Persona existentePorNombre = personaRepository.findByNombre(persona.getNombre());
         Persona existentePorApellido = personaRepository.findByApellido(persona.getApellido());
@@ -39,10 +39,8 @@ public class IPersonaServiceImpl implements IPersonaService {
             (!existentePorNombre.getId().equals(id) || !existentePorApellido.getId().equals(id))) {
             throw new PersonaDuplicadaException("Ya existe otra persona con ese nombre y apellido.");
         }
-        // Actualizar los campos necesarios
         existente.setNombre(persona.getNombre());
         existente.setApellido(persona.getApellido());
-        // ...actualiza otros campos si existen...
         return personaRepository.save(existente);
     }
 
