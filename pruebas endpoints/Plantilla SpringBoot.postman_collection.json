@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "3f4480b6-50ba-4e51-98e8-287a329a390f",
+		"name": "Plantilla SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43574934",
+		"_collection_link": "https://rodrigo-5252394.postman.co/workspace/Practica-05~e13387fc-cf70-4ed7-80ad-61635c66332e/collection/43574934-3f4480b6-50ba-4e51-98e8-287a329a390f?action=share&source=collection_link&creator=43574934"
+	},
+	"item": [
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Obtener Personas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener una Persona por su ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/personas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear una Persona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Infanzon Acosta\",\r\n    \"edad\": 19\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar a una Persona por su ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Infanzon Acosta\",\r\n    \"edad\": 19\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/personas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
