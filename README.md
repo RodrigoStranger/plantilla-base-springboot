@@ -31,9 +31,6 @@ Para ejecutar este proyecto necesitarás:
 2. **PostgreSQL** (motor de base de datos instalado en tu sistema)  
    - Descarga: [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
 
-3. **Java 17** o superior (recomendado para compatibilidad con Spring Boot 3+).  
-   - Descarga: [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
-
 ---
 
 ## 🛠 Configuración del Proyecto
