@@ -49,12 +49,12 @@ Edita el archivo application.yaml y coloca tus credenciales:
 ```java
    spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/demo_persona
-    username: TU_USUARIO
-    password: TU_CONTRASEÑA
+    url: jdbc:postgresql://localhost:5432/TU_BASE_DE_DATOS # Cambiar el nombre de la aplicaci�n dependiendo del proyecto
+    username: TU_USUARIO # Cambiar el nombre de la aplicacion dependiendo del proyecto
+    password: TU_CONTRASEÑA # Cambiar el nombre de la aplicacion dependiendo del proyecto
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # Cambiar a 'update' o 'validate' en produccion
     show-sql: true
 ```
 
