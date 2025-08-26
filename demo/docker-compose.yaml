@@ -1,5 +1,24 @@
 version: '3.7'
 services:
+  postgres:
+    image: postgres:16
+    container_name: postgres-server
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rodrigo73714089ubnt
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./_data/db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - tomcat-net
+
   tomcat:
     build:
       context: .
@@ -9,10 +28,14 @@ services:
       - "8080:8080"
     volumes:
       - ./_data/logs:/usr/local/tomcat/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
     networks:
       tomcat-net:
         aliases:
           - tomcat.host
+
 networks:
   tomcat-net:
     driver: bridge

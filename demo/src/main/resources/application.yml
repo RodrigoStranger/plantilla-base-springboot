@@ -2,9 +2,9 @@ spring:
   application:
     name: plantilla # Cambiar el nombre de la aplicaci�n dependiendo del proyecto
   datasource:
-    url: jdbc:postgresql://host.docker.internal:5432/postgres # Cambiar dependiendo de la configuracion local
-    username: postgres # Cambiar dependiendo de la configuracion local
-    password: rodrigo73714089ubnt # Cambiar dependiendo de la configuracion local
+    url: jdbc:postgresql://postgres:5432/postgres # Cambiar dependiendo de la configuracion docker
+    username: postgres # Cambiar dependiendo de la configuracion docker
+    password: rodrigo73714089ubnt # Cambiar dependiendo de la configuracion docker
   jpa:
     hibernate:
       ddl-auto: create-drop # Cambiar a 'update' o 'validate' en produccion
