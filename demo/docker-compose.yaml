@@ -8,15 +8,11 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./_data/webapps:/usr/local/tomcat/webapps
       - ./_data/logs:/usr/local/tomcat/logs
-      - ./_data/conf:/usr/local/tomcat/conf
     networks:
       tomcat-net:
         aliases:
           - tomcat.host
-volumes:
-  _data: {}
 networks:
   tomcat-net:
     driver: bridge

@@ -2,7 +2,7 @@ spring:
   application:
     name: plantilla # Cambiar el nombre de la aplicaci�n dependiendo del proyecto
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres # Cambiar dependiendo de la configuracion local
+    url: jdbc:postgresql://host.docker.internal:5432/postgres # Cambiar dependiendo de la configuracion local
     username: postgres # Cambiar dependiendo de la configuracion local
     password: rodrigo73714089ubnt # Cambiar dependiendo de la configuracion local
   jpa:
